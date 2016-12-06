@@ -487,7 +487,7 @@ class Component extends App{
 		let html = `
 			<div id="recipeLayout" class="container">
 				<nav>
-					<div class="nav-wrapper">
+					<div class="nav-wrapper cyan">
 						<a href="#" onclick="component.recipeLayout()" class="brand-logo">&nbsp;&nbsp;SUD-AN</a>
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 						<ul class="right hide-on-med-and-down">
@@ -506,7 +506,7 @@ class Component extends App{
 				<div id="recipeList"></div>
 				<div id="recipeCreate"></div>
 
-				<footer class="page-footer">
+				<footer class="page-footer cyan">
 					<div class="container">
 						<div class="row">
 							<div class="col l6 s12">
