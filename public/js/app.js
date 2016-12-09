@@ -1,373 +1,122 @@
-/*
-"use strict";
-
+'use strict';
 
 class App{
 	constructor(){
-		this.media = [
-			{
-				"img" : "http://lorempixel.com/580/250/nature/1",
-				"alignment" : "center-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/2",
-				"alignment" : "left-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/3",
-				"alignment" : "right-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			},
-			{
-				"img" : "http://lorempixel.com/580/250/nature/4",
-				"alignment" : "center-align",
-				"caption": "asdfasdfasdfa",
-				"slogan": "asdfasdasdfasdfasdfasdfasdf"
-			}
-		];
-	}
-	render(html, component){
-
-		component.innerHTML += html;
-	}
-
-	reRender(html, component){
-
-		component.innerHTML = html;
-	}
-}
-
-class Component extends App{
-	constructor(){
-
-		super();
-	}
-
-	ukayLayout(){
-		let html = `
-			 <nav>
-			    <div class="nav-wrapper blue darken-4">
-			      <a href="#" class="brand-logo yellow-text ">UKAY v1.0</a>
-			      <ul id="nav-mobile" class="right hide-on-med-and-down">
-			        <li><a href="#">Items</a></li>
-			        <li><a href="#">Cart</a></li>
-			        <li><a href="#">New</a></li>
-			      </ul>
-			    </div>
-			  </nav>
-
-
-			  <div class="slider">
-			    <ul class="slides">
-
-			    `;
-
-			   for(let i=0;i<this.media.length;i++){
-					html += `
-					      <li>
-					        <img src="${this.media[i].img}"> <!-- random image -->
-					        <div class="caption ${this.media[i].alignment}">
-					          <h3>${this.media[i].caption}</h3>
-					          <h5 class="light grey-text text-lighten-3">${this.media[i].slogan}</h5>
-					        </div>
-					      </li>
-					    
-					 `;
-					}
-
-
-			 html += `
-
-					</ul>
-				  </div>
-				<footer class="page-footer blue darken-4">		          
-		          <div class="footer-copyright">
-		            <div class="container">
-		            © 2016 - Another decode App
-		            </div>
-		          </div>
-		        </footer>			  
-		`;
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("app"));
-	}
-}
-
-let component = new Component();
-component.ukayLayout();
-*/
-
-
-
-
-"use strict";
-
-class App{
-	constructor(){
-		this.recipe = [
-			{
-				"id": 1,
-				"name": "Utan",
-				"description": "Utan or Utan Bisaya is a vegetable soup dish popular in the Visayan region, commonly it consists different vegetables like malunggay leaves, okra, squash, taro, vine spinach (alugbati), eggplants, snake beans (sitaw), ginger and tomatoes cooked together with either pork, fish or shrimps. Similar to laswa and the only difference it the vegetable used, are the ones commonly found in the Visayas.",
-				"photo": "img/utan.jpg",
-				"ingredients":[
-					{
-						"qty": "1 large bunch",
-						"name": "spinach"
-					},
-					{
-						"qty": "1/2 small",
-						"name": "butternut squash"
-					},
-					{
-						"qty": "200 g",
-						"name": "sliced okra"
-					},
-					{
-						"qty": "250 g",
-						"name": "fatty minced pork"
-					},
-					{
-						"qty": "6 cups",
-						"name": "chicken stock"
-					},
-					{
-						"qty": "1",
-						"name": "finely chopped onion"
-					},
-					{
-						"qty": "4 cloves",
-						"name": "minced garlic"
-					},
-					{
-						"qty": "1 tbsp",
-						"name": "minced ginger"
-					},
-					{
-						"qty": "1",
-						"name": "fish sauce"
-					},
-					{
-						"qty": "1",
-						"name": "freshly ground black pepper"
-					},
-					{
-						"qty": "1",
-						"name": "oil"
-					}
-				],
-				"preparationtime": "15 minutes",
-				"cookingtime": "20 minutes",
-				"yields": "4-5 servings",
-				"procedure": [
-					"In a pot add oil then sauté garlic, ginger and onions.",
-					"Add the pork mince and cook until brown in colour.",
-					"Add the chicken stock then bring to a boil, simmer for 5 minutes.",
-					"Add the squash cook for 3 minutes.",
-					"Add the okra and cook for 3 more minutes.",
-					"Season with fish sauce and freshly ground black pepper add the spinach then simmer for one more minute, turn heat off then cover. Let spinach cook in residual heat for 2 minutes then serve."
-				]
-			},
-			{
-				"id": 2,
-				"name": "Tolang Bisaya",
-				"description": "One of the things and considered as very special food in Iligan City that is also known for fresh seafood capital in the region. Most fish sold in our local market here in Pila came from Laguna Lake, bangus (milkfish), tilapia, dalag (mudfish), hito and kanduli (catfish).",
-				"photo": "img/tolangbisaya.jpg",
-				"ingredients":[
-					{
-						"qty": "1/2 kilo",
-						"name": "Pampano or any white-meat fish"
-					},
-					{
-						"qty": "1",
-						"name": "quartered bell pepper"
-					},
-					{
-						"qty": "1 stalk",
-						"name": "Salay (lemongrass)"
-					},
-					{
-						"qty": "3",
-						"name": "quartered tomatoes"
-					},
-					{
-						"qty": "2",
-						"name": "sliced in half onions"
-					},
-					{
-						"qty": "1 bunch",
-						"name": "leeks"
-					},
-					{
-						"qty": "3 cups",
-						"name": "water"
-					}
-				],
-				"preparationtime": "15 minutes",
-				"cookingtime": "20 minutes",
-				"yields": "4-5 servings",
-				"procedure": [
-					"Place all ingredients in a casserole except fish.",
-					"Bring to a boil.",
-					"Add the fish and boil again until the fish is cooked.",
-					"Serve hot."
-				]
-			},
-			{
-				"id": 3,
-				"name": "Pork Humba Bisaya",
-				"description": "Humba (HOOM-BAA) is a Filipino dish similar to adobo, and popular in central part of the Philippines, particularly among the Visayan speaking people. The method of cooking is similar to adobo (chicken or lean pork) by simmering the meat in a marinade of soy sauce, vinegar, brown sugar, bay leaf, and peppercorns. The difference is the type of meat used which is pork belly, which has skin, fat, and lean portions.",
-				"photo": "img/porkhumbabisaya.jpg",
-				"ingredients":[
-					{
-						"qty": "2 lbs.",
-						"name": "cut into 1 and 1/2-inch squares of pork belly"
-					},
-					{
-						"qty": "1 pack",
-						"name": "dried banana blossoms"
-					},
-					{
-						"qty": "1/4 cup",
-						"name": "salted black beans"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "soy sauce"
-					},
-					{
-						"qty": "1/4 cup",
-						"name": "distilled white vinegar"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "brown sugar"
-					},
-					{
-						"qty": "6",
-						"name": "minced garlic cloves"
-					},
-					{
-						"qty": "2",
-						"name": "dry bay leaves"
-					},
-					{
-						"qty": "1 teaspoon",
-						"name": "whole peppercorns"
-					},
-					{
-						"qty": "4 cups",
-						"name": "water"
-					}
-				],
-				"preparationtime": "10 minutes",
-				"cookingtime": "1 hours, 30 minutes",
-				"yields": "6-8 servings",
-				"procedure": [
-					"Rinse meat thoroughly under cold running water and pat dry with paper towels.",
-					"In a non-stick skillet over medium heat, arrange pork belly slices in one layer and pan-fry until most of the oil comes out. If you use a smaller pan, you may do this in two batches.",
-					"Once the meat turns brown and most of the fat has rendered, remove from heat and transfer to a cooking pot.",
-					"Add the rest of the ingredients into the pot and bring to a boil. Lower heat to medium low and simmer for an hour until pork has become tender and sauce has thickened.",
-					"Serve with rice."
-				]
-			},
-			{
-				"id": 4,
-				"name": "Manok Adobo Sa Gata",
-				"description": "Masarap ang “native na manok” sa lutuing ito.  Masarap lalo na kapag ‘sinagkotsa ito sa tanglad” bago ito lagyan ng gata at luyang dilaw.",
-				"photo": "img/manokadobosagata.jpg",
-				"ingredients":[
-					{
-						"qty": "1 kilo",
-						"name": "manok adobo cut"
-					},
-					{
-						"qty": "1",
-						"name": "Sibuyas katamtaman ang laki"
-					},
-					{
-						"qty": "3",
-						"name": "butil ng Bawang"
-					},
-					{
-						"qty": "1 piece",
-						"name": "Laurel"
-					},
-					{
-						"qty": "1 piece",
-						"name": "Tanglad"
-					},
-					{
-						"qty": "1",
-						"name": "Luyang dilaw"
-					},
-					{
-						"qty": "1",
-						"name": "Luya"
-					},
-					{
-						"qty": "1",
-						"name": "Sili pangsigang o pamaksiw"
-					},
-					{
-						"qty": "1",
-						"name": "Sili Labuyo"
-					},
-					{
-						"qty": "1",
-						"name": "Sili pokingan o bell pepper"
-					},
-					{
-						"qty": "1",
-						"name": "Paminta durog"
-					},
-					{
-						"qty": "1/2 cup",
-						"name": "Vinegar"
-					},
-					{
-						"qty": "1 tablespoon",
-						"name": "Patis"
-					},
-					{
-						"qty": "1",
-						"name": "Magic Sarap"
-					},
-					{
-						"qty": "1",
-						"name": "Gata"
-					}
-				],
-				"preparationtime": "10 minutes",
-				"cookingtime": "1 hours, 30 minutes",
-				"yields": "6-8 servings",
-				"procedure": [
-					"Igisa ang sibuyas, bawang at luya papulahin kunti",
-					"Ilagay ang manok, patis paminta at laurel, hayaan ng 5 minuto na kumukulo at ilagay na rin ang tanglad at suka.  Takpan.",
-					"Kapag tapos na itong pakuluan ng 5 minuto, ilagay ang pangalawang gata kasabay ang luyang dilaw na hiniwa-hiwa ng maliliit.  Hayaang kumulo ng mga  10 minuto.",
-					"Puwede nang isabay ang papaya na hiniwa ng slanting o ayon sa gusto mong sukat",
-					"Kapag luto na, ilagay na ang panghuling gata, kasabay ng siling pamaksiw at siling labuyo (tantyahin lamang ang gusto mong anghang).",
-					"Timplahin ng asin at magic sarap, ilagay ang bell pepper o siling pokingan.",
-					"Pakuluan ng dahan dahan hanggang sa ito ay lumapot.  Mas masarap kapag lumabas ang sariling mantika ng niyog ng kunti.",
-					"Ihain na mainit kasabay ng mainit din na kanin."
-				]
-			}			
-		];
-		this.state = [
-			{
-				"bind": {
-					"procedures":[],
-					"ingredients_qty":[],
-					"ingredients_name":[]
-				}
-			}
+		this.novel = [
+		{
+			"name":"World Teacher",
+			"photo":"img/List/world.png",
+			"description":"Once called as the world's strongst agent who ended up becoming a teacher in his retirement to train a new generation of agents. After many years of training his disciples, he was killed at the old age of 60 by the ploy of some secret organization. Thus, he was reincarnated in another world with his memories intact.",
+			"link":"https://bayabuscotranslation.com/"
+		},
+		{
+			"name":"Tsuki ga Michibiku Isekai Douchuu",
+			"photo":"img/List/tsuki.png",
+			"description":"High school student Misumi Makoto is called into a fantasy world by the god Tsukuyomi, in order to be a hero. However, powerful others in this world aren’t as thrilled to have him there, and kick him to the edge of the world just as Tsukuyomi declares that he must leave Makoto to find his own way. Now it’s up to Makoto to find his own way!",
+			"link":"https://isekailunatic.wordpress.com/tsuki-ga-michibiku-isekai-douchuu/"
+		},
+		{
+			"name":"Death March kara Hajimaru Isekai Kyousoukyoku",
+			"photo":"img/List/death.png",
+			"description":"29-year-old programmer Suzuki Ichirou finds himself transported into a fantasy RPG. Within the game, he's a 15-year-old named Satou. At first he thinks he's dreaming, but his experiences seem very real. Due to his use of a 3-time-use special power (meteor shower), he ends up wiping out an army of lizardmen and becoming very high level. He hides his level and plans to live peacefully and meet new people, though developments in the game story (like the return of a demon king) might get in his way.",
+			"link":"http://www.sousetsuka.com/p/blog-page_11.html"
+		},
+		{
+			"name":"Only Sense Online",
+			"photo":"img/List/oso.png",
+			"description":"Yun is a novice MMO player who equipped only unpopular skills labelled as garbage. However, soon after everyone started to notice the “Strongest” play style which made full use of Support Magic and Items——?!",
+			"link":"https://krytykal.org/only-sense/"
+		},
+		{
+			"name":"Kyuuketsu Hime wa Barairo no Yume o Miru",
+			"photo":"img/List/kyuuketsu.png",
+			"description":"I had expected to die in an accident, but instead I woke up as my vampire princess character from “Eternal Horizon Online”. It turns out that I, along with my assets, territories, and my pets from the game were all transferred to a similar world. When fighting around, I was clearly in a higher position than my followers who are stronger than me. Due to these circumstances, I also had no choice but to reign as the ‘me’ in the game. In addition, demons, beasts, and even the demi-humans of this world turned to follow me as well, and before I realized it I had established a huge empire. Furthermore, mysterious enemies appeared, and caused me trouble to no end…!",
+			"link":"https://madospicy.wordpress.com/"
+		},
+		{
+			"name":"Alice Tale in Phantasmagoria",
+			"photo":"img/List/alice.png",
+			"description":"Arisugawa Akito suddenly finds himself in another world and another body, namely the one of the game character he just created. Female, game character. Alice. When there is no virtual reality technology around. Join him/her as he/she struggles with the world, her body and the puppies after her life as the dream of being the strongest feels suddenly far away…. as does being a man.",
+			"link":"http://raisingthedead.ninja/current-projects/alice-tale/"
+		},
+		{
+			"name":"The Guild's Cheat Receptionist",
+			"photo":"img/List/guild.png",
+			"description":"One day, due to God’s mistake, Tomoaki Akino’s life was accidentally snatched away. Though he gratefully accepted the cheat offered as an apology and reincarnated, he was reborn as a female elf! Then time passed, and Tomoaki now works as the intelligent and beautiful receptionist named Ilya in the Lunéville branch of the Guild Association. In a world of swords and magic, her job in the guild begins today.",
+			"link":"https://zirusmusings.com/gcr-toc/"
+		},
+		{
+			"name":"The New Gate",
+			"photo":"img/List/gate.png",
+			"description":"“THE NEW GATE”, an online game that trapped its players and turned into a death game, was now releasing the thousands of players that had been dragged into it, thanks to the efforts of Shin, one of the most powerful players. But after having defeated the last boss and freed everyone, he was swallowed up by a strange light and found himself inside the game world 500 years in the future and unable to leave.",
+			"link":"https://shintranslations.com/the-new-gate-toc/"
+		},
+		{
+			"name":"Ikai Shinki to no Reunion",
+			"photo":"img/List/reunion.png",
+			"description":"A young man named Kurosu Tooi was summoned to another world. He commanded 12 beautiful goddesses to defeat the demon king in order to return to his world. After a year, he returned back to the other world, but ten years had already passed there. His strongest servants are now his strongest enemies. It's time to save his scattered comrades; in his second coming to the other world, he has to fight, talk and make them fall for him! Let the curtain unfold, for this an Reunion fantasy of obtaining the strongest Goddesses (Heroines)!",
+			"link":"http://lndb.info/light_novel/Isekai_Shinki_to_no_Reunion"
+		},
+		{
+			"name":"Magi Craft Meister",
+			"photo":"img/List/magi.png",
+			"description":"There is only one Magi Craft Meister in the world. After the death of the last Meister over one thousand years ago, Jin Nidoh was transported to another world in order to succeed her will. After obtaining the knowledge of the Magi Craft Meister, Jin attempts to use a warp gate but it malfunctions, transporting him to an unknown world. Along with that, an automata he recently restored also uses the warp gate in order to search for her “father.” Thus, the crafting journey of the new Magi Craft Meister begins!",
+			"link":"https://natsutl.wordpress.com/projects/novel-tl/mcm/"
+		},
+		{
+			"name":"Tensai Shitara Slime Datta Ken",
+			"photo":"img/List/slime.png",
+			"description":"Mikami Satoru is a successful, 37 year old adult who has two problems: he has never had a girlfriend; and, while meeting his colleague on the street, Satoru got fatally stabbed. The result? He has reincarnated as a slime. Will that be his third misfortune or a blessing?",
+			"link":"https://circustranslations.com/chapter-list/"
+		},
+		{
+			"name":"Overlord",
+			"photo":"img/List/overlord.png",
+			"description":"After announcing it will be discontinuing all service, the internet game 'Yggdrasil' shut downs -. .. That was the plan But for some reasons, the player character did not log out some time after the server was closed NPC starts to become sentient A normal youth who loves gaming in the real world seemed to have been transported into an alternate world along with his guild, becoming the strongest mage with the appearance of a skeleton, Momonga. He leads his guild 'Ainz Ooal Gown' towards an unprecedented legendary fantasy adventure!",
+			"link":"On Hiatus"
+		},
+		{
+			"name":"Madan no Ou to Vanadis",
+			"photo":"img/List/madan.png",
+			"description":"In times of war, set in Western Europe, Eleonora Viltaria, one of the seven Vanadis of Zhcted, leads the war into Brune. There are actually seven Vanadis, named like this because they each received a powerful weapon from the dragon, to reign over seven territories, each possessing their own. The power of the Vanadis causes dread and fear toward their enemies. An Earl in the service of the country of Brune, a young archer called Tigre, got a taste of it after he was defeated on the battlefield by Ellen (Eleonora). However, Ellen decided to spare his life after seeing his skills. In exchange, he is asked to serve Ellen....",
+			"link":"https://www.baka-tsuki.org/project/?title=Madan_no_Ou_to_Vanadis"
+		},
+		{
+			"name":"Konjiki no Wordmaster",
+			"photo":"img/List/konjiki.png",
+			"description":"Gluttonous and book-loving loner high school student Okamura Hiiro finds himself flying into a different world, along with his happy-go-lucky classmates! The four classmates are frolicking around after seeing that they all have the title of Hero, but Hiiro's title was...Innocent Bystander?! Hiiro starts his adventure by himself with his word magic, the power to embody the image of a word and aims for new lands!",
+			"link":"https://www.baka-tsuki.org/project/index.php?title=Konjiki_no_Wordmaster"
+		},
+		{
+			"name":"Gun Ota",
+			"photo":"img/List/gunota.png",
+			"description":"Hotta Youta is killed while returning home from work on a cold evening. He wakes up being carried by a bunny-eared woman! Featuring Reincarnation, Guns and Harem, its a Gun vs Magic Story that gives Hotta Youta a new life… and an edge!",
+			"link":"https://omegaharem.wordpress.com/gunota-rehost/"
+		},
+		{
+			"name":"Elf Tensei",
+			"photo":"img/List/elf.png",
+			"description":"A genius magician, to fight against his fate to die a natural death from old age, grasped at the truth of magic to allow himself to reincarnate with a power he created himself. The cycle of reincarnation is repeated multiple times and in his 31st reincarnation, the magician became a boy named Syril who lives in a village of elves. However, that village is ruled by Humans, and the Elves are treated as livestock. After becoming 14 years old, Syril, who regained his past knowledge and experience, stands up to help a girl, who is his childhood friend. The story of the creation of an ideal country begins in that one village, a place where all races can coexist. Elves, Fox-girl, and various other Heroines.",
+			"link":"http://raisingthedead.ninja/current-projects/elf-tensei/"
+		},
+		{
+			"name":"Boku wa Tomodachi ga Sakunai",
+			"photo":"img/List/haganai.png",
+			"description":"Hasegawa Kodaka has transferred schools, and he’s having a hard time making friends. It doesn’t help that his blond hair tends to make people think he’s a delinquent. One day, he runs into his bad-tempered solitary classmate Yozora while she’s talking animatedly to her imaginary friend Tomo. Realizing that neither of them have any actual friends, they decide that the best way to alter this situation is to form a club and start recruiting.",
+			"link":"On Hiatus"
+		},
+		{
+			"name":"Bu ni Mi",
+			"photo":"img/List/bunimi.png",
+			"description":"Slava is an old man. On the verge of death, he has only two regrets; not perfecting his Martial Arts that had been passed down by his Master, and leaving his adopted daughter, as well as disciple, the Elf Alma, alone. His two dying wishes that he makes to her are that she take the hidden scroll of the school and learn its secrets, and that she would love, have a family, and be happy in his stead.",
+			"link":"https://bunimithetranslation.wordpress.com/"
+		},
+		{
+			"name":"Asuka of the Scarlet Sky",
+			"photo":"img/List/asuka.png",
+			"description":"Kashiwagi Yuuto, who was bored with his life, died in an unexpected accident. He was given the ability to create holy treasure tools from God after his death. Yuuto was thrown out to another world and met Asuka, the girl who wants to be a hero.",
+			"link":"http://www.machineslicedbread.xyz/asuka/"
+		}
 		];
 	}
 
@@ -381,642 +130,142 @@ class App{
 		component.innerHTML = html;
 	}
 
-	createRecipe(){
-		let id = document.getElementById('recipe_id');
-		let name = document.getElementById('recipe_name');
-		let description = document.getElementById('recipe_description');
-		let photo = document.getElementById('recipe_photo');
-		let preparationtime = document.getElementById('recipe_preparationtime');
-		let cookingtime = document.getElementById('recipe_cookingtime');
-		let yields = document.getElementById('recipe_yields');
-		
-		let dummyIngredients = [];
-		for(let i=0;i<this.state[0].bind.ingredients_qty.length;i++){
-			dummyIngredients.push({
-				"qty" : this.state[0].bind.ingredients_qty[i],
-				"name" : this.state[0].bind.ingredients_name[i]
-			});
+	novelDesign(){
+		let id = document.getElementById('kill');
+		let name = document.getElementById('kill2');
+		let description = document.getElementById('kill3');
+		let image = document.getElementById('kill4');
+
+		let novel = {
+			"name":name.value,
+			"description":description.value,
+			"photo":photo.value,
 		}
-		let ingredients = dummyIngredients;
 
-		let dummyProcedure = [];
-		for(let i=0;i<this.state[0].bind.procedures.length;i++){
-			dummyProcedure.push(this.state[0].bind.procedures[i]);
-		}
-		let procedure = dummyProcedure;
+	}
+	createNovel(){
+		let n = document.getElementById('newName');
+		let p = document.getElementById('newPhoto');
+		let e = document.getElementById('newDescription');
+		let l = document.getElementById('newLink');
 
-		let recipe = {			
-			"id": id.value,
-			"name": name.value,
-			"description": description.value,
-			"photo": photo.value,
-			"ingredients":ingredients,
-			"preparationtime": preparationtime.value,
-			"cookingtime": cookingtime.value,
-			"yields": yields.value,
-			"procedure": procedure
-		};
+		let novel = {"Name":n.value,"Photo":p.value,"Description":e.value,"Link":l.value};
+		this.novel.push(novel);
 
+		n.value = p.value = e.value = l.value =''; //clear field daw? dunno what it means
+		this.novelListInfo();
+	}
 
-		this.recipe.push(recipe);
-
-		//Clear Fields
-		this.state[0].bind.procedures = this.state[0].bind.ingredients_qty = this.state[0].bind.ingredients_name = [];
-		id.value = name.value = description.value = photo.value = preparationtime.value = cookingtime.value = yields.value = ''; 
-	}	
-
-	deleteRecipe(key){
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			if(r[i].id == key){
-				this.recipe.splice(i,1);
+	deleteNovel(key){	
+		let d = this.novel;
+		for(let i=0;i<d.length;i++){
+			if(d[i].id == key){
+				this.novel.splice(i,1);
 				break;
-			}
-		}		
-		this.recipeLayout();
-	}
-
-	findRecipeByID(id){
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			if(id==r[i].id){
-				return r[i];
-			}
+			}	
 		}
-	}	
-
-	findRecipeByName(name){
-		let objects = [];
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
-			// console.log(name," vs ",r[i].name," = ",expr);
-			if(expr){
-				objects.push(r[i]);
-			}
-		}
-		return objects;
+		this.novelList();
 	}
+	updateNovel(key){
+		let n = document.getElementById('newName');
+		let p = document.getElementById('newPhoto');
+		let e = document.getElementById('newDescription');
+		let l = document.getElementById('newLink');
 
-	bindRecipeNewProcedures(val,id){
-		let bind = this.state[0].bind.procedures;
-		bind[id] = val;
-		// console.log(bind);
-	}	
+		let x = this.novel[key];
+		let novel = {"Name":n.value,"Photo":p.value,"Description":e.value,"Link":l.value};
 
-	bindRecipeNewIngredients(val,id,obj){
-		let bind = null;
-		if(obj === "qty"){
-			bind = this.state[0].bind.ingredients_qty;
-		}
-		else if(obj === "name"){
-			bind = this.state[0].bind.ingredients_name;
-		}
-		bind[id] = val;
-		// console.log(bind);
-	}	
-}
-
-class Component extends App{
-	constructor(){
-		
-		super();
-	}
-
-	recipeLayout(){
-		let html = `
-			<div id="recipeLayout" class="container">
-				<nav>
-					<div class="nav-wrapper cyan">
-						<a href="#" onclick="component.recipeLayout()" class="brand-logo">&nbsp;&nbsp;SUD-AN</a>
-						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-						<ul class="right hide-on-med-and-down">
-							<li><a href="#" onclick="component.recipeList()"><i class="material-icons left">assignment</i>Recipes</a></li>
-							<li><a href="#" onclick="component.recipeCreate()"><i class="material-icons left">note_add</i>Create</a></li>
-						</ul>
-						<ul class="side-nav" id="mobile-demo">
-							<li><a href="#" onclick="component.recipeList()"><i class="material-icons left">assignment</i>Recipes</a></li>
-							<li><a href="#" onclick="component.recipeCreate()"><i class="material-icons left">note_add</i>Create</a></li>
-						</ul>
-					</div>
-				</nav>
-
-				<div id="recipeRecent"></div>
-				<div id="recipeView"></div>
-				<div id="recipeList"></div>
-				<div id="recipeCreate"></div>
-
-				<footer class="page-footer cyan">
-					<div class="container">
-						<div class="row">
-							<div class="col l6 s12">
-								<h5 class="white-text">Recipe App</h5>
-								<p class="grey-text text-lighten-4">Another decode demo app for students in web dev't and oop. A bisaya inspired recipe app that promotes native food and culture.</p>
-							</div>
-							<div class="col l4 offset-l2 s12">
-								<h5 class="white-text">Links</h5>
-								<ul>
-									<li>
-										<a class="grey-text text-lighten-3" href="#" onclick="component.recipeLayout()">
-											<!-- <i class="material-icons left">dashboard</i> -->
-											Home</a></li>
-											<li><a class="grey-text text-lighten-3" href="#" onclick="component.recipeList()">
-												<!-- <i class="material-icons left">assignment</i> -->
-												Recipes</a></li>
-												<li><a class="grey-text text-lighten-3" href="#" onclick="component.recipeCreate()">
-													<!-- <i class="material-icons left">dashboard</i> -->
-													Create</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="footer-copyright">
-										<div class="container">
-											© 2016-2017 Copyright Text
-											<img class="right" src="img/decode.png" style="margin-top:6px;" />
-
-										</div>
-									</div>
-								</footer>	
-
-							</div>
-		`;
-
-		this.reRender(`
-			${html}
-
-			`,document.getElementById("app"));
-		this.recipeRecent();		
-	}
-
-	recipeRecent(){
-		
-		let html = `
-			<h5 class="center-align">Recent Recipes</h5>
-			<div class="row">
-		`;
-
-		let r = this.recipe;
-		let count = 0;
-		for(let i=(r.length-1);i>=0;i--){
-			if(count++ === 3)break;
-			html+= `
-				<div class="col s12 m4">
-					<div class="card small hoverable">
-						<div class="card-image">
-							<img src="${r[i].photo}">
-							<span class="card-title">${r[i].name}</span>
-						</div>
-						<div class="card-content">
-							<p>${r[i].description}</p>
-						</div>
-						<div class="card-action">
-							<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-						</div>
-					</div>
-				</div>
-			`;
-		}
-
-		html += `</div>`;
-
-		this.render(`		
-			${html}
-			`,document.getElementById("recipeRecent"));
-	}
-
-	recipeView(id){
-		let r = this.findRecipeByID(id);
-
-		let html = `
-			<h5 class="center-align">${r.name}</h5>
-			<div class="row">				
-				<div class="col s12 m12">
-					<div class="card horizontal small">
-						<div class="card-image">
-							<img src="${r.photo}">
-						</div>
-						<div class="card-stacked">
-							<div class="card-content">
-								<p>${r.description}</p>
-							</div>
-							<div class="card-action small">								
-								<span onclick="component.deleteRecipe(${r.id})" class="new badge small red" data-badge-caption="">DELETE</span>
-								<span onclick="component.recipeLayout()" class="new badge small" data-badge-caption="">BACK TO HOME</span>
-							</div>
-						</div>					
-					</div>				
-				</div>			
-			</div>
-		`;
-
-		html += `
-			<div class="row">
-				<table class="striped">
-					<thead>
-						<tr>
-							<th>Preparation Time</th>
-							<th>Cooking Time</th>
-							<th>Yields</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>${r.preparationtime}</td>
-							<td>${r.cookingtime}</td>
-							<td>${r.yields}</td>
-						</tr>					
-					</tbody>
-				</table>
-			</div>
-		`;
-
-		html += `
-			<div class="row">				
-				<div class="col s6 m6">
-					<h6>Ingredients</h6>
-					<ul class="collection">
-		`;
-
-		for(let i=0;i<r.ingredients.length;i++){
-			let ri = r.ingredients[i];
-			html += `
-						<li class="collection-item avatar">
-							<i class="material-icons circle">star</i>
-							<span class="title">${ri.qty}</span>
-							<p>${ri.name}<br>
-								
-							</p>
-							
-						</li>
-			`;
-		}
-
-		html += `				
-					</ul>
-				</div>
-				<div class="col s6 m6">
-					<h6>Procedure</h6>
-					<ul class="collection">
-		`;
-
-		for(let i=0;i<r.procedure.length;i++){
-			let rp = r.procedure[i];
-			html += `
-						<li class="collection-item avatar">
-							<i class="material-icons circle">done</i>
-							<span class="title">Step ${i+1}</span>
-							<p>${rp}<br>
-								
-							</p>
-							
-						</li>
-			`;
-		}	
-
-		html += `
-					</ul>
-				</div>			
-			</div>
-		`;
-
-		this.reRender(`		
-			${html}			
-			`,document.getElementById("recipeView"));
-		$('#recipeView').show();
-		$('#recipeRecent').hide();
-		$('#recipeList').hide();
-		$('#recipeCreate').hide();
-	}
-
-	recipeList(){
-		let html = `
-			<br/>
-		  	<nav>
-	    		<div class="nav-wrapper white">
-					<form>
-						<div class="input-field">				
-							<input onkeyup="component.recipeListItems(this.value)" id="search" type="search" placeholder="Search" required>
-							<label for="search"><i class="material-icons">search</i></label>
-							<i class="material-icons">close</i>
-						</div>
-					</form>
-				</div>
-			</nav>
-			<br/>
-		`;
-
-		html += `
-			<div class="row" id="recipeListItems">
-		`;
-		let r = this.recipe;
-		for(let i=0;i<r.length;i++){
-			html+= `
-				<div class="col s12 m4">
-					<div class="card small hoverable">
-						<div class="card-image">
-							<img src="${r[i].photo}">
-							<span class="card-title">${r[i].name}</span>
-						</div>
-						<div class="card-content">
-							<p>${r[i].description}</p>
-						</div>
-						<div class="card-action">
-							<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-						</div>
-					</div>
-				</div>
-			`;
-		}
-
-		html += `</div>`;
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("recipeList"));
-		$('#recipeList').show();
-		$('#recipeView').hide();
-		$('#recipeRecent').hide();
-		$('#recipeCreate').hide();		
-	}
-
-	recipeListItems(name){
-		let html = ``;
-		let r = this.findRecipeByName(name);
-		for(let i=0;i<r.length;i++){
-			html+= `
-				<div class="col s12 m4">
-					<div class="card small hoverable">
-						<div class="card-image">
-							<img src="${r[i].photo}">
-							<span class="card-title">${r[i].name}</span>
-						</div>
-						<div class="card-content">
-							<p>${r[i].description}</p>
-						</div>
-						<div class="card-action">
-							<a href="#" onclick="component.recipeView(${r[i].id})">More</a>
-						</div>
-					</div>
-				</div>
-			`;
-		}		
-		this.reRender(`
-			${html}
-			`,document.getElementById("recipeListItems"));
-		$('#recipeList').show();
-		$('#recipeView').hide();
-		$('#recipeRecent').hide();	
-		$('#recipeCreate').hide();
-	}
-
-	recipeCreate(){
-		let html = `
-			<div class="row">
-				<form class="col s12">
-				<h5 class="center-align">Create New Recipe</h5>
-				<button onclick="component.createRecipe()" class="btn waves-effect waves-light">Save</button>
-					<div class="row">
-						<div class="input-field col s6">
-							<input disabled value="${this.recipe.length+1}" id="recipe_id" type="text" class="validate">
-						</div>
-						<div class="input-field col s6">
-							<input id="recipe_name" type="text" class="validate">
-							<label for="recipe_name">NAME</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s6">
-							<input id="recipe_description" type="text" class="validate">
-							<label for="recipe_description">DESCRIPTION</label>
-						</div>
-						<div class="input-field col s6">
-							<input id="recipe_photo" type="text" class="validate">
-							<label for="recipe_photo">PHOTO</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s4">
-							<input id="recipe_preparationtime" type="text" class="validate">
-							<label for="recipe_preparationtime">PREPARATION TIME</label>
-						</div>
-						<div class="input-field col s4">
-							<input id="recipe_cookingtime" type="text" class="validate">
-							<label for="recipe_cookingtime">COOKING TIME</label>
-						</div>
-						<div class="input-field col s4">
-							<input id="recipe_yields" type="text" class="validate">
-							<label for="recipe_yields">YIELDS</label>
-						</div>
-					</div>
-
-
-					<div class="row">
-						<div class="input-field col s6">
-							<h6> INGREDIENTS</h6>
-							<button onclick="component.recipeNewIngredients()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-							<div id="recipeNewIngredients"></div>
-						</div>
-						<div class="input-field col s6">
-							<h6>PROCEDURES</h6>
-							<button onclick="component.recipeNewProcedures()" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></button>
-							<div id="recipeNewProcedures"></div>
-						</div>
-					</div>					
-				</form>
-			</div>			
-		`;
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("recipeCreate"));
-		$('#recipeCreate').show();
-		$('#recipeList').hide();
-		$('#recipeView').hide();
-		$('#recipeRecent').hide();
-		this.state[0].bind.procedures = [];		
-		this.state[0].bind.ingredients_qty = [];		
-		this.state[0].bind.ingredients_name = [];		
-	}
-
-	recipeNewProcedures(){
-		let bind = this.state[0].bind.procedures;
-		bind.push("");		
-		
-		let html = ``;
-		for(let i=0;i<bind.length;i++){
-			let decode_bind = `onkeyup="component.bindRecipeNewProcedures(this.value,${i})"`;
-			html += `
-				<div class="row">
-					<div class="input-field col s12">
-						<input ${decode_bind} value="${bind[i]}" type="text" />					
-					</div>
-				</div>		
-			`;
-		}
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("recipeNewProcedures"));
-	}
-
-	recipeNewIngredients(obj){
-		let bind_qty = this.state[0].bind.ingredients_qty;
-		let bind_name = this.state[0].bind.ingredients_name;
-		bind_qty.push("");		
-		bind_name.push("");		
-		
-		let html = ``;
-		for(let i=0;i<bind_qty.length;i++){
-			let decode_bind_qty = `onkeyup="component.bindRecipeNewIngredients(this.value,${i},'qty')"`;
-			let decode_bind_name = `onkeyup="component.bindRecipeNewIngredients(this.value,${i},'name')"`;
-			html += `
-				<div class="row">
-					<div class="input-field col s12">
-						<input ${decode_bind_qty} value="${bind_qty[i]}" type="text" />					
-					</div>
-				</div>	
-				<div class="row">
-					<div class="input-field col s12">
-						<input ${decode_bind_name} value="${bind_name[i]}" type="text" />					
-					</div>
-				</div>		
-			`;
-		}
-
-		this.reRender(`
-			${html}
-			`,document.getElementById("recipeNewIngredients"));
-	}	
-
-
-}
-
-let component = new Component();
-component.recipeLayout();
-
-
-//////////////////////////////////////
-
-/*
-"use strict";
-
-class App{
-	constructor(){
-		this.movies = [
-			{
-				"id": 1,
-				"Title":"Winter Is Coming",
-				"Year":"2011",
-				"Director":"Timothy Van Patten",
-				"Poster":"img/winteriscoming.jpg",
-				"Actors":"Sean Bean, Mark Addy, Nikolaj Coster-Waldau, Michelle Fairley"
-			},
-			{
-				"id": 2,
-				"Title":"The North Remembers",
-				"Year":"2012",
-				"Director":"Alan Taylor",
-				"Poster":"img/thenorthremembers.jpg",
-				"Actors":"Peter Dinklage, Lena Headey, Nikolaj Coster-Waldau, Michelle Fairley"
-			},
-			{
-				"id": 3,
-				"Title":"Valar Dohaeris",
-				"Year":"2013",
-				"Director":"Daniel Minahan",
-				"Poster":"img/valar.jpg",
-				"Actors":"Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington"
-			},
-			{
-				"id": 4,
-				"Title":"Two Swords",
-				"Year":"2014",
-				"Director":"D.B. Weiss",
-				"Poster":"img/twoswords.jpg",
-				"Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-			},
-			{
-				"id": 5,
-				"Title":"The Wars to Come",
-				"Year":"2015",
-				"Director":"Michael Slovis",
-				"Poster":"img/thewarstocome.jpg",
-				"Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-			},
-			{
-				"id": 6,
-				"Title":"The Red Woman",
-				"Year":"2016",
-				"Director":"Jeremy Podeswa",
-				"Poster":"img/redwoman.jpg",
-				"Actors":"Peter Dinklage, Nikolaj Coster-Waldau, Lena Headey, Emilia Clarke"
-			}
-		];
-	}
-
-	render(html, component){
-
-		component.innerHTML += html;
-	}
-
-	reRender(html, component){
-
-		component.innerHTML = html;
-	}
-
-	createMovie(){
-		let t = document.getElementById('newTitle');
-		let y = document.getElementById('newYear');
-		let d = document.getElementById('newDirector');
-		let p = document.getElementById('newPoster');
-		let a = document.getElementById('newActors');
-
-		let movie = {"Title":t.value,"Year":y.value,"Director":d.value,"Poster":p.value,"Actors":a.value};
-		this.movies.push(movie);
-
-		t.value = y.value = d.value = p.value = a.value = ''; //Clear Fields
-		this.movieListInfo();
-	}
-
-	deleteMovie(key){		
-		let table = document.getElementById('movieListInfo');
-		table.deleteRow(key);
-		this.movies.splice(key,1);
-
-		// let m = this.movies;
-		// let dummy = [];
-		// for(let i=0;i<m;i++){
-		// 	if(key!=i){
-		// 		dummy.push(m[i]);
-		// 	}
-		// }
-		// this.movies = dummy;
-		let details = document.getElementById('movieDetails');
+		this.novel[key] = novel;
+		let details = document.getElementById('novelDetails');
 		details.innerHTML = "";
-		
-		this.movieListInfo();	
-		this.showMovieList();	
+
+		this.novelListInfo();
+		this.showNovelList();
+
 	}
+	searchNovel(name){
+      let objects = [];
+      let d = this.car;
+      for(let i=0;i<d.length;i++){
+        let expr = (d[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
+        if(expr){
+          objects.push(d[i]);
+        }
+      }
+      return objects;
+    }
 
-	updateMovie(key){
-		let t = document.getElementById('updateTitle');
-		let y = document.getElementById('updateYear');
-		let d = document.getElementById('updateDirector');
-		let a = document.getElementById('updateActors');
+    novelsearch(key){
+	    let txtsearchnovel = document.getElementById("txtsearchnovel");
+	    let listnovel = document.getElementById("novelList");
+	  
+	  
 
-		let m = this.movies[key];
-		let movie = {"id":m.id,"Title":t.value,"Year":y.value,"Director":d.value,"Poster":m.Poster,"Actors":a.value};
+	    let html = ``;
+	    for(let i=0;i<this.animes.length;i++){
+	      if(this.animes[i].description.toLowerCase().includes(txtsearchanime.value)||
+	         this.animes[i].name.toLowerCase().includes(txtsearchanime.value)||
+	         this.animes[i].description.toUpperCase().includes(txtsearchanime.value)||
+	         this.animes[i].name.toUpperCase().includes(txtsearchanime.value)||
+	         this.animes[i].description.includes(txtsearchanime.value)||
+	         this.animes[i].name.includes(txtsearchanime.value)){
+	        html += `
+	          
+	          <div class="col s12 m7 l12">
+							    
+							    <div class="card horizontal">
+							      <div class="card-image">
+							        <img src="${this.novel[i].photo}">
+							      </div>
+							      <div class="card-stacked">
+							        <div class="card-content">
+							          <h5>${this.novel[i].name}</h5>
+							          <p>${this.novel[i].description}</p>
+							        </div>
+							        <div class="card-action">
+							          <a href="#!">More Information</a>
+							        </div>
+							      </div>
+							    </div>
+							  </div>
+			`;
+	      }
+	    }
+	    listnovel.innerHTML = html;
+	  }
 
-		this.movies[key] = movie;
-		let details = document.getElementById('movieDetails');
-		details.innerHTML = "";
-		
-		this.movieListInfo();
-		this.showMovieList();
-	}
+readList(){
+	let textsearchnovel = document.getElementById('textsearchnovel');
+	let novelList = document.getElementById('novelList');
+	let html = ``;
+	for(let index=0;index<this.novel.length;index++){
+			html +=`                   
 
-	showLandingPage(){
+			   <div class="col s12 m7 l12">
+							    
+							    <div class="card horizontal">
+							      <div class="card-image">
+							        <img src="${this.novel[index].photo}">
+							      </div>
+							      <div class="card-stacked">
+							        <div class="card-content">
+							          <h5>${this.novel[index].name}</h5>
+							          <p>${this.novel[index].description}</p>
+							        </div>
+							        <div class="card-action">
+							          <a href="#!">More Information</a>
+							        </div>
+							      </div>
+							    </div>
+							  </div>
+
+			`; 
+		}
+		novelList.innerHTML = html;
+		$('#novellist').hide();
+}	  
+
+    showLandingPage(){
 		$('#landingpage').show();
 		$('#createpage').hide();
 		$('#readpage').hide();
@@ -1042,22 +291,16 @@ class App{
 		$('#createpage').hide();		
 		$('#readpage').hide();
 		$('#updatedeletepage').show();
-	}	
-
-	searchMovie(value=""){
-		let objects = [];
-		let r = this.movies;
-		for(let i=0;i<r.length;i++){
-			// console.log("r:",r[i].Title.toUpperCase().indexOf(title.toUpperCase()));
-			let expr1 = (r[i].Title.toUpperCase().indexOf(value.toUpperCase()) > -1);
-			let expr2 = (r[i].Year.toUpperCase().indexOf(value.toUpperCase()) > -1);
-			// console.log(name," vs ",r[i].name," = ",expr);
-			if(expr1 || expr2){
-				objects.push(r[i]);
-			}
-		}
-		return objects;		
 	}
+
+	novellist(){
+		$('#navnovel').show();
+		$('#novelslider').hide();
+		$('#novelfooter').show();
+		$('#novelrecent').hide();
+		$('#list').show();
+	}
+
 }
 
 class Component extends App{
@@ -1065,223 +308,150 @@ class Component extends App{
 		super();
 	}
 
-	movieList(){
-		this.render(
-			`	      
-		<div class="header clearfix">
-            <nav>
-              <ul class="nav nav-pills float-xs-right">
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="component.showLandingPage()">
-					<i class="fa fa-home"></i>
-                  	Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="#" onclick="component.showMovieList()">
-					<i class="fa fa-list"></i>
-                  	Movie List</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="component.showMovieCreate()">
-					<i class="fa fa-film"></i>
-                  	Movie Create</a>
-                </li>
-              </ul>
-            </nav>            
-            <h3 class="text-muted">
-            	<img class="decode-logo" src="img/decode.png"  />
-            	Movie App
-            </h3>
-          </div>
+	landingPage(){
+		let html = `
+
+		<nav>
+			<div id="navnovel" class="nav-wrapper cyan">
+				<a href="#" class="brand-logo" onclick="component.showLandingPage">Aphelios</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#!" onclick="component.novellist()">Novel List</a></li>
+					<li><a href="badges.html">Update</a></li>
+					<li class="pangit"><a href="collapsible.html">Recommend</a></li>
+				</ul>
+			</div>
+		</nav>
 
 
-		<div id="landingpage">
-          <div class="jumbotron">
-            <h1 class="display-3">Movie App</h1>
-            <p class="lead">A simple decode demo app about movie.</p>
-            <i class="fa fa-film fa-5x red"></i>
-          </div>
+		<div id="homepage">
 
-          <div class="row marketing">
-            <div class="col-lg-6">              
-              <h4>
-              	<i class="fa fa-gears green"></i>
-              	Create Movie</h4>
-              <p>Provides an interface to allow adding new movie to the list. </p>
 
-              <h4>
-				<i class="fa fa-gears green"></i>
-              	Read Movie</h4>
-              <p>Provides a list view that supports movie search and show details features.</p>
+		<br><br>
+	              <div id="novelslider" class="container">
+	               <div class="slider">
+				    <ul class="slides">
+				      <li>
+				        <img src="img/Slide/loghorizon.jpg"> <!-- random image -->
+				        <div class="caption center-align">
+				          <h3>Welcome, you lowly Peon!</h3>
+				        </div>
+				      </li>
+				      <li>
+				        <img src="img/Slide/little.jpg"> <!-- random image -->
+				        <div class="caption left-align">
+				          <h3>Just take a look around~</h3>
+				        </div>
+				      </li>
+				      <li>
+				        <img src="img/Slide/ngnl.jpg"> <!-- random image -->
+				        <div class="caption right-align">
+				          <h3>No dilly-dallying~</h3>
+				        </div>
+				      </li>
+				      <li>
+				        <img src="img/Slide/overlord_wall.jpg"> <!-- random image -->
+				        <div class="caption center-align">
+				          <h3>Keep us informed~</h3>
+				        </div>
+				      </li>
+				    </ul>
+				  </div>
+				 </div>
+	              </div>
+	 
+	      
 
-            </div>
+			<div id="novelrecent" class="container">
+				<div class="row center">
+					`;
 
-            <div class="col-lg-6">
-              <h4>
-              	<i class="fa fa-gears green"></i>
-              	Update Movie</h4>
-              <p>Allows the user to modify the content of a particular movie.</p>
-
-              <h4>
-              	<i class="fa fa-gears green"></i>
-              	Delete Movie</h4>
-              <p>Allows the user to remove a particular movie object from the list.</p>
-
-            </div>
-          </div>          
-
-		</div>
-				
-				<div id="createpage" class="row marketing">
-					<div class="col col-sm-12">
-						<div id="movieCreate"></div>						
-					</div>
-				</div>
-
-				<div id="readpage" class="row marketing">
-					<div class="col col-sm-12">
-						<h1>Movie List</h1>
-						<table id="movieList" class="table">
-							<thead>
-								<tr>
-									<th>Title</th>
-									<th>Year</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<div class="form-group">
-							    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-							    <div class="input-group">
-							      <div class="input-group-addon">
-									  <span class="fa fa-search"></span>
-									  <!-- checkout other fontawesome icons at http://fontawesome.io/icons/ -->
+					let r = this.novel;
+					let count = 0;
+					for(let i=(r.length-1);i>=0;i--){
+					if(count++ === 3)break;
+					html+= `
+							<div class="col s12 m7 l12">
+							    
+							    <div class="card horizontal">
+							      <div class="card-image">
+							        <img src="${this.novel[i].photo}">
 							      </div>
-							      <input oninput="component.movieListInfo(this.value)" type="text" class="form-control" placeholder="Search">
+							      <div class="card-stacked">
+							        <div class="card-content">
+							          <h5>${this.novel[i].name}</h5>
+							          <p>${this.novel[i].description}</p>
+							        </div>
+							        <div class="card-action">
+							          <a href="#!">More Information</a>
+							        </div>
+							      </div>
 							    </div>
 							  </div>
-							<tbody id="movieListInfo"></tbody>
-						</table>
+						`;
+					}
+
+		html +=`
+				</div>
+			</div>
+
+
+		<div id="novellist" class="container">
+				<div class="row center">
+					`;
+
+					
+	for(let index=0;index<this.novel.length;index++){
+			html +=`                   
+
+			<div id="cards" class="col-md-3" >
+				<img class="card-img-top" src="${this.novel[index].photo}" alt="Card image cap">
+				<div class="card-block">
+					<h4 class="card-title">${this.novel[index].name}</h4>
+					<p class="card-text">${this.novel[index].description}</p>
+					<a href="#" class="btn btn-primary" onclick="component.animeDetails(${index})">More Info</a>
+				</div>
+			</div>
+
+						`;
+					}
+
+		html +=`
+				</div>
+			</div>
+
+
+		<footer id="novelfooter" class="page-footer cyan">
+			<div class="container">
+				<div class="row">
+					<div class="col l6 s12">
+						<h5 class="white-text">The Master of this House</h5>
+						<image class="pic" src="img/le_me.png">
+						<p class="grey-text text-lighten-4">This website is only a prototype. I will launch a proper and working one after a few adjustments.</p>
+					</div>
+					<div class="col l4 offset-l2 s12">
+						<h5 class="white-text">Follow me on:</h5>
+						<ul>
+							<li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Royal Road Legends</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+							<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+						</ul>
 					</div>
 				</div>
-
-				<div id="updatedeletepage" class="row marketing">
-					<div id="movieDetails"></div>
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					© 2016 - 2017 Copyright Text
+					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
 				</div>
-				
-          <footer class="footer">
-            <p>&copy; decode 2016</p>
-          </footer>
-
-			`
-			,document.getElementById('app'));
-		this.movieListInfo();
-		$('#landingpage').show();
-		$('#createpage').hide();		
-		$('#readpage').hide();
+			</div>
+		</footer>
+		`;
+		this.reRender(`${html}`,document.getElementById("app"));
+		$('#novellist').hide();
 	}
 
-	movieListInfo(filter){
-		// console.log(filter);
-		let html = "";
-		// let m = this.movies;
-		let m = this.searchMovie(filter);
-		for(let i=0;i<m.length;i++){	
-			html += `
-				<tr>
-					<td>${m[i].Title}</td>
-					<td>${m[i].Year}</td>
-					<td><button class="btn btn-primary"  onclick="component.movieDetails(${i})">Show Details</button></td>
-				</tr>
-			`;
-		}
-		this.reRender(html,document.getElementById('movieListInfo'));
-	}
-
-	movieDetails(key){
-		this.reRender(
-			`
-				<h1>Movie Details</h1>
-				<div class="media">
-				    <div class="media-left">
-				        <a href="#">
-				            <img class="media-object img-thumbnail" src="${this.movies[key].Poster}" width="220" />
-				        </a>
-				    </div>
-				    <div class="media-body" id="movieDetailsInfo">
-				        <h4 class="media-heading">${this.movies[key].Title}</h4>
-				        Year: ${this.movies[key].Year}<br/>
-						Director: ${this.movies[key].Director}<br/>
-						Actors: ${this.movies[key].Actors}<br/>
-						<button class="btn btn-success" onclick="component.movieUpdate(${key})">Update</button>
-						<button class="btn btn-danger" onclick="component.deleteMovie(${key})">Delete</button>
-						<button class="btn btn-info" onclick="component.showMovieList()">Back</button>
-					</div>	
-				</div>			
-			`,document.getElementById('movieDetails'));
-			this.showUpdateDelete();
-	}
-
-	movieCreate(){
-		this.render(
-			`
-				<h1>Movie Create</h1>
-				Title: <input class="form-control" id="newTitle" type="" placeholder="Enter Title" /><br/>
-				Year: <input class="form-control" id="newYear" type="" placeholder="Enter Title" /><br/>
-				Director: <input class="form-control" id="newDirector" type="" placeholder="Enter Director" /><br/>
-				Poster: <input class="form-control" id="newPoster" type="" placeholder="Enter Poster" /><br/>
-				Actors: <input class="form-control" id="newActors" type="" placeholder="Separate using comma" /><br/>
-				<button class="btn btn-primary" onclick="component.createMovie()">Create</button>
-			`,document.getElementById('movieCreate'));
-	}
-
-	movieUpdate(key){
-		this.reRender(
-			`
-				<div class="input-group input-group-md">
-		        	<span class="input-group-addon">
-		        		<span>ID</span>
-		        	</span>
-		        	<input readonly class="form-control" type="text" value="${this.movies[key].id}" /><br/>
-		        </div>
-		        <br/>
-		        <div class="input-group input-group-md">
-		        	<span class="input-group-addon">
-		        		<span>Title</span>
-		        	</span>
-		        	<input class="form-control" id="updateTitle" type="text" value="${this.movies[key].Title}" /><br/>
-		        </div>
-		        <br/>
-		        <div class="input-group input-group-md">
-		        	<span class="input-group-addon">
-		        		<span>Year</span>
-		        	</span>
-		        	<input class="form-control" id="updateYear" type="text" value="${this.movies[key].Year}" /><br/>
-		        </div>
-		        <br/>
-		        <div class="input-group input-group-md">
-		        	<span class="input-group-addon">
-		        		<span>Director</span>
-		        	</span>
-		        	<input class="form-control" id="updateDirector" type="text" value="${this.movies[key].Director}" /><br/>
-		        </div>	
-		        <br/>
-		        <div class="input-group input-group-md">
-		        	<span class="input-group-addon">
-		        		<span>Actors</span>
-		        	</span>
-		        	<input class="form-control" id="updateActors" type="text" value="${this.movies[key].Actors}" /><br/>
-		        </div>	
-				<br/>
-				<button class="btn btn-success btn-block" onclick="component.updateMovie(${key})">Save</button>
-			`,document.getElementById('movieDetailsInfo'));
-	}
-
-
-	
 }
 
-let component = new Component();
-component.movieList();
-component.movieCreate();
-
-*/
+let component = new Component;
+component.landingPage();

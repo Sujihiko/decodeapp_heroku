@@ -7671,7 +7671,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .slides li .caption {
-  color: #fff;
+  color: #ff00db;
   position: absolute;
   top: 15%;
   left: 15%;
